@@ -3,7 +3,16 @@ const Potion = require('../lib/Potion');
 
 jest.mock('../lib/Potion');
 
-console.log(new Potion());
+console.log('hello');
+
+test('gets players attack value', () => {
+    const player = new Player('Dave');
+
+    player.strength = 10;
+
+    expect(player.getAttackValue()).toBeGreaterThanOrEqual(5);
+    expect(player.getAttackValue()).toBeLessThanOrEqual(15);
+});
 
 test('gets players health value', () => {
     const player = new Player('Dave');
